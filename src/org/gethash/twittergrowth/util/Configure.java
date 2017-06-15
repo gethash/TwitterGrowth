@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -38,13 +40,18 @@ public class Configure {
             String filename = "twittergrowth.properties";
             input = getClass().getClassLoader().getResourceAsStream(filename);
             if (input == null) {
-                System.out.println("Not able to to find " + filename);
+                Logger.getLogger("Not able to to find " + filename);
                 return;
             }
             properties.load(input);
         } catch (IOException ioe) {
-            System.err.println("Not able to load properties file " + ioe.toString());
+            Logger.getLogger("Not able to load properties file " + ioe.toString());
+            Logger.getLogger(Configure.class.getName()).log(Level.SEVERE, null, ioe);
         }
+    }
+
+    public Properties getProperties() {
+        return properties;
     }
 
     public void print() {
