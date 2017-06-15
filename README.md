@@ -29,4 +29,8 @@ rateSystemCycleWait=<time to wait for the next add, remove cycle in seconds>
 
 # User srouce
 twitterUsers=<list of users as new friends list, seperated with ,>
-´´´
+```
+
+
+## Titter OAuth Key and Token
+Of course you need to do some stuff to register your application.  Find out more about it here - https://dev.twitter.com/oauth/overview/application-owner-access-tokens
